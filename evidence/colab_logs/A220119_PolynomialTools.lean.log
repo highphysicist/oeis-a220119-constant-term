@@ -1,0 +1,2 @@
+/content/A220119_Lean/source/A220119/PolynomialTools.lean:227:4: warning: 'push_cast' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`

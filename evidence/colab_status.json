@@ -1,0 +1,28 @@
+{
+  "verified": true,
+  "state": "VERIFIED_BY_COLAB_RUN",
+  "compiled": [
+    "A220119/Spec.lean",
+    "A220119/Arithmetic.lean",
+    "A220119/PolynomialTools.lean",
+    "A220119/Elimination.lean",
+    "A220119/Main.lean",
+    "Audit.lean"
+  ],
+  "errors": [],
+  "runner_version": 3,
+  "source_root": "/content/A220119_Lean/source",
+  "expected_mathlib_tag": "v4.19.0",
+  "ordinary_lean_kernel_check": true,
+  "independent_kernel_checker_used": false,
+  "lean_version": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+  "import_smoke_passed": true,
+  "source_sha256": {
+    "A220119/Spec.lean": "b27ac1ec952ab1f78d9eea937c12a8fc30d493c0c1be1c2b6c580d3aa00d7af1",
+    "A220119/Arithmetic.lean": "fd7129819dbb59f9736ca362a83dfefe8261383ac64a53e46dc6af0e6ab3f117",
+    "A220119/PolynomialTools.lean": "c29911c4e1d6aed34743659fa0c96b06f28bcac15384bce1ed9c479a34f02e53",
+    "A220119/Elimination.lean": "6a8a0fec4abb2502898f6c394dc28faff6dca06cc511400ae06cea1b90df1ebe",
+    "A220119/Main.lean": "24a3495b11efc2270d0420f8b56618c746cbc5ff9e8034612fdc548a51f94678",
+    "Audit.lean": "5d444f5df790c6b1553c5e7dae0636db9bc655cd649152ee868ae6cec7c2ed4b"
+  }
+}

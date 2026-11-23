@@ -1,0 +1,6 @@
+{
+  "mathlib_tag": "v4.19.0",
+  "mathlib_commit": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+  "toolchain": "leanprover/lean4:v4.19.0",
+  "bootstrap_installer_url": "https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh"
+}

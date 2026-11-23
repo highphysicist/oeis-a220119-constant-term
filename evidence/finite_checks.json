@@ -1,0 +1,59 @@
+{
+  "claim": "A220119 constant-term identity",
+  "direct_expansion": [
+    {
+      "n": 0,
+      "value": "1"
+    },
+    {
+      "n": 1,
+      "value": "12"
+    },
+    {
+      "n": 2,
+      "value": "804"
+    },
+    {
+      "n": 3,
+      "value": "88680"
+    },
+    {
+      "n": 4,
+      "value": "12386340"
+    },
+    {
+      "n": 5,
+      "value": "1985320512"
+    },
+    {
+      "n": 6,
+      "value": "348219006744"
+    },
+    {
+      "n": 7,
+      "value": "65085592725648"
+    },
+    {
+      "n": 8,
+      "value": "12753825281316900"
+    },
+    {
+      "n": 9,
+      "value": "2592090993453733200"
+    },
+    {
+      "n": 10,
+      "value": "542345058701093666304"
+    }
+  ],
+  "finite_checks_are_not_a_universal_proof": true,
+  "identity_bound": 45,
+  "identity_checks": {
+    "legendre_coefficients": 1081,
+    "outer_weights": 1081,
+    "factorial_bridges": 17296,
+    "auxiliary_identities": 1081,
+    "final_convolutions": 1081
+  },
+  "elapsed_seconds": 7.761
+}

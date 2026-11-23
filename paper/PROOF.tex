@@ -1,0 +1,192 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\CT}{\operatorname{CT}}
+\newcommand{\bn}[2]{\binom{#1}{#2}}
+\title{The constant-term identity in OEIS A220119}
+\author{Shreyas Samir Kolte}
+\date{November 23, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give a finite coefficient-extraction proof of the Laurent-polynomial
+identity proposed by F.~Chapoton in OEIS A220119 on May 25, 2026.
+The argument uses the binomial theorem, Vandermonde's identity, and a
+factorial identity. It holds for every nonnegative integer $n$.
+The separate divisibility conjecture in that entry is not addressed.
+\end{abstract}
+
+Write $\bn uv=0$ when $v<0$ or $v>u$, for $u\geq0$.
+All variables below are commuting indeterminates, and all coefficient
+extractions and sums are finite.
+Put
+\[
+ F_n(k)=\bn nk^2\bn{n+k}n,\qquad
+ A_n=\sum_{j,k=0}^{n}F_n(j)F_n(k)\bn{j+k}n.
+\]
+The double sum is the definition used in OEIS A220119; it also appears
+in Almkvist and Zudilin~\cite[Section 4]{AZ}.
+
+\begin{theorem}\label{thm:main}
+For every integer $n\geq0$,
+\[
+ A_n=\CT_{a,b,c,d,e}
+ \left(
+ \frac{(1+c)(1+c+d)(1+a)(1+a+c+d+e)
+ (1+a+b)(1+a+b+c+d+e)}
+ {abcde}
+ \right)^n.
+\]
+\end{theorem}
+
+\section*{An auxiliary coefficient identity}
+For $0\leq\ell\leq n$, define
+\[
+ H_{n,\ell}=[c^nd^n](1+c)^n(1+c+d)^n(c+d)^\ell.
+\]
+
+\begin{lemma}\label{lem:aux}
+For $0\leq\ell\leq n$,
+\begin{equation}\label{eq:aux}
+ \bn{2n-\ell}n H_{n,\ell}
+   =\sum_{k=0}^{n}F_n(k)\bn{k}{n-\ell}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Expanding in the total degree in $c,d$ gives
+\begin{equation}\label{eq:Hfirst}
+ H_{n,\ell}=\sum_{r=0}^{\ell}
+ \bn nr\bn n{\ell-r}\bn{n+r}n
+ =[x^\ell](1+x)^n L_n(x),
+\end{equation}
+where
+\[
+ L_n(x)=\sum_{r=0}^{n}\bn nr\bn{n+r}n x^r.
+\]
+Indeed, in the expansion of $(1+c)^n$, a term $c^{n-r}$
+must be paired with $(c+d)^{n+r}$ to contribute to $c^nd^n$.
+
+The following polynomial identity is a direct consequence of Vandermonde:
+\begin{equation}\label{eq:L}
+ L_n(x)=\sum_{r=0}^{n}\bn nr^2 x^r(1+x)^{n-r}.
+\end{equation}
+To verify it, the coefficient of $x^t$ on the right is
+\[
+ \sum_{r=0}^{t}\bn nr^2\bn{n-r}{t-r}
+ =\bn nt\sum_{r=0}^{t}\bn nr\bn tr
+ =\bn nt\bn{n+t}n.
+\]
+Combining \eqref{eq:Hfirst} and \eqref{eq:L} yields
+\begin{equation}\label{eq:Hsecond}
+ H_{n,\ell}=\sum_{r=0}^{\ell}
+ \bn nr^2\bn{2n-r}{\ell-r}.
+\end{equation}
+For $0\leq r\leq\ell\leq n$, cancellation of factorials gives
+\begin{equation}\label{eq:factorial}
+ \bn{2n-\ell}n\bn nr^2\bn{2n-r}{\ell-r}
+ =\bn n\ell\bn nr\bn\ell r\bn{2n-r}n.
+\end{equation}
+Both sides of \eqref{eq:factorial} equal
+\[
+ \frac{n!(2n-r)!}
+ {(r!)^2((n-r)!)^2(n-\ell)!(\ell-r)!}.
+\]
+Consequently, the left side of \eqref{eq:aux} is
+\[
+ \bn n\ell\sum_{r=0}^{\ell}\bn nr\bn\ell r\bn{2n-r}n.
+\]
+For its right side, use
+$\bn nk\bn{k}{n-\ell}
+ =\bn n\ell\bn\ell{n-k}$ and then set $r=n-k$:
+\[
+ \sum_{k=0}^{n}\bn nk^2\bn{n+k}n\bn{k}{n-\ell}
+ =\bn n\ell\sum_{r=0}^{\ell}
+   \bn nr\bn\ell r\bn{2n-r}n.
+\]
+These expressions agree.
+\end{proof}
+
+\section*{Proof of the theorem}
+\begin{proof}[Proof of Theorem \ref{thm:main}]
+Let $B_n$ denote the asserted constant term. Set
+$X=1+a$ and $T=1+a+c+d=X+c+d$.
+Equivalently, $B_n$ is the coefficient of $a^nb^nc^nd^ne^n$ in
+\[
+ (1+c)^n(1+c+d)^n X^n(X+b)^n(T+e)^n(T+b+e)^n.
+\]
+First,
+\[
+ [e^n](T+e)^n(T+b+e)^n
+ =\sum_{i=0}^{n}\bn ni^2 T^{n-i}(T+b)^i.
+\]
+Next,
+\[
+ [b^n](X+b)^n(T+b)^i
+ =\sum_{\substack{0\leq j\leq n\\n-j\leq i}}
+     \bn nj\bn i{n-j}X^{n-j}T^{i-n+j}.
+\]
+After multiplication by $X^nT^{n-i}$, the monomial in $X,T$
+is $X^{2n-j}T^j$. Its weight, summed over $i$, is
+\begin{equation}\label{eq:weight}
+ \bn nj\sum_{i=0}^{n}\bn ni^2\bn i{n-j}
+ =\bn nj^2\bn{n+j}n=F_n(j).
+\end{equation}
+For completeness, the first equality follows from
+$\bn ni\bn i{n-j}=\bn nj\bn j{n-i}$ and
+$\sum_i\bn ni\bn j{n-i}=\bn{n+j}n$.
+Thus
+\[
+ B_n=\sum_{j=0}^{n}F_n(j)R_{n,j},
+\]
+where
+\[
+ R_{n,j}=[a^nc^nd^n](1+c)^n(1+c+d)^n
+                    X^{2n-j}(X+c+d)^j.
+\]
+Expand the last factor in powers of $c+d$ and extract $a^n$:
+\[
+ R_{n,j}=\sum_{\ell=0}^{j}
+ \bn j\ell\bn{2n-\ell}n H_{n,\ell}.
+\]
+Lemma \ref{lem:aux}, followed by Vandermonde's identity, gives
+\begin{align*}
+ R_{n,j}
+ &=\sum_{k=0}^{n}F_n(k)
+       \sum_{\ell=0}^{j}\bn j\ell\bn k{n-\ell}\\
+ &=\sum_{k=0}^{n}F_n(k)\bn{j+k}n.
+\end{align*}
+Substitution proves $B_n=A_n$. Every displayed identity also holds
+when $n=0$, so the proof includes that case.
+\end{proof}
+
+\section*{Verification and status}
+The proof above is an all-$n$ algebraic argument, not an inference from
+initial values. The accompanying standard-library Python script independently
+expands the five-variable numerator for $0\leq n\leq10$ and checks the
+auxiliary identities for $0\leq n\leq45$, using exact integers.
+The accompanying formalization passed the recorded Lean 4.19.0 build and audit. Independent human peer review is not claimed.
+
+The accessible OEIS entry retrieved on November 23, 2026 still labels this
+specific constant-term identity as a conjecture and attributes it to
+F.~Chapoton, May 25, 2026. Targeted searches did not locate an earlier proof;
+this is not a guarantee of priority. The classical identities used in the
+argument are not claimed to be new. The separate claim
+$(n+1)(n+2)\mid A_n$ for $n>0$ is not proved here.
+
+\begin{thebibliography}{9}
+\bibitem{OEIS}
+OEIS Foundation Inc.,
+\emph{A220119}, especially the comment by F.~Chapoton dated May 25, 2026,
+\url{https://oeis.org/A220119}.
+
+\bibitem{AZ}
+G.~Almkvist and W.~Zudilin,
+\emph{Differential equations, mirror maps and zeta values},
+arXiv:math/0402386, version 2 (2004), Section 4.
+\url{https://arxiv.org/abs/math/0402386}.
+\end{thebibliography}
+\paragraph{Assistance.} Substantial OpenAI ChatGPT/Codex assistance was used in the proof, writing, formalization, and debugging.
+\end{document}

@@ -1,0 +1,7 @@
+*.olean
+*.ilean
+.lake/
+__pycache__/
+source/logs/
+source/status.json
+source/ImportSmoke.lean

@@ -1,0 +1,3 @@
+'A220119.constantTerm_eq_doubleSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'A220119.full_conjecture' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IndependentAudit.original_statement' depends on axioms: [propext, Classical.choice, Quot.sound]

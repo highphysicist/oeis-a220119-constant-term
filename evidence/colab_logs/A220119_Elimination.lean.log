@@ -1,0 +1,8 @@
+/content/A220119_Lean/source/A220119/Elimination.lean:21:2: warning: 'push_cast' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+/content/A220119_Lean/source/A220119/Elimination.lean:34:2: warning: 'push_cast' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+/content/A220119_Lean/source/A220119/Elimination.lean:54:8: warning: 'push_cast' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+/content/A220119_Lean/source/A220119/Elimination.lean:141:2: warning: 'push_cast' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
